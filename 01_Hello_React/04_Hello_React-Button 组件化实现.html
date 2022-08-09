@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 添加 React 依赖 -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    // 封装 App 组件
+    class App extends React.Component {
+      constructor() {
+        super();
+        this.state = {
+          message: "Hello React!"
+        }
+      }
+      // 不能手动调用 render 函数
+      render() {
+        return (
+          <div>
+            <h2>{this.state.message}</h2>
+            <button onClick={this.btnClick.bind(this)}>改变文本</button>
+          </div>
+        )
+      }
+      btnClick() {
+        console.log(this)
+        // 不能这样修改 this.state.message = "Hello React 18!"
+        this.setState({
+          message: "Hello React 18 !"
+        })
+      }
+    }
+    const root = ReactDOM.createRoot(document.getElementById("app"))
+    root.render(<App />)
+  </script>
+
+</body>
+
+</html>

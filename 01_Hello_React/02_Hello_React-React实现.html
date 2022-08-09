@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 添加 React 依赖 -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    // ReactDOM.render(渲染的内容，挂载的对象)
+    const msg = "Hello React"
+    const root = ReactDOM.createRoot(document.getElementById("app"))
+    root.render(
+      <div>
+        <h2>{msg}</h2>
+      </div>
+    )
+
+    // <h2></h2> 是 jsx 的代码
+  </script>
+
+</body>
+
+</html>
